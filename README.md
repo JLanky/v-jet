@@ -1,25 +1,50 @@
-# Lumen PHP Framework
+#Task
+Hey! Here is a test task for you.
+If you succeed and you will complete it, we are glad to see you at the next stage of interviewing.
+Good luck!
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+**Stack:**
+Lumen
+PostgreSQL
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+**Task:**
+Create RESTFull API.
 
-## Official Documentation
+Description:
+Create the API to share the company's information for the logged users.
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
 
-## Contributing
+**Details:**
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Create DB migrations for the tables: users, companies, etc.
+Suggest the DB structure. Fill the DB with the test data.
 
-## Security Vulnerabilities
+**Endpoints:**
+- https://domain.com/api/user/register
+  — method POST
+  — fields: first_name [string], last_name [string], email [string], password [string], phone [string]
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+- https://domain.com/api/user/sign-in
+  — method POST
+  — fields: email [string], password [string]
 
-## License
+- https://domain.com/api/user/recover-password
+  — method POST/PATCH
+  — fields: email [string] // allow to update the password via email token
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# v-jet
+- https://domain.com/api/user/companies
+  — method GET
+  — fields: title [string], phone [string], description [string]
+  — show the companies, associated with the user (by the relation)
+
+- https://domain.com/api/user/companies
+  — method POST
+  — fields: title [string], phone [string], description [string]
+  — add the companies, associated with the user (by the relation)
+
+**Unit tests are optional.**
+
+
+###Deploy description
+
+
