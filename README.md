@@ -47,4 +47,22 @@ Suggest the DB structure. Fill the DB with the test data.
 
 ###Deploy description
 
+>git clone git@github.com:JLanky/v-jet.git
 
+>cd v-jet
+
+>composer install
+ 
+>mv .env.example .env 
+
+Set credentials for database and mail services in the .env file
+
+>php artisan migrate
+
+> php artisan db:seed
+
+**Test user credentials:**
+
+email: admin@i.ua
+
+pass: 12345678
