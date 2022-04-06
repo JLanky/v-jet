@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Services\CompanyService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
