@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CompanyService
 {
-    private $repository;
+    private CompanyRepository $repository;
 
     public function __construct(CompanyRepository $repository)
     {
@@ -21,7 +21,8 @@ class CompanyService
     public function getUserCompanies()
     {
         return $this->repository
-            ->getUserCompanies();
+            ->getUserCompanies()
+            ->companies;
     }
 
     /**

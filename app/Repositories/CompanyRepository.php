@@ -15,6 +15,8 @@ class CompanyRepository extends CoreRepository
 
     public function getUserCompanies()
     {
-        return Auth::user()->companies;
+        return Auth::user()
+            ->with(['companies:id,user_id,title,phone,description'])
+            ->first();
     }
 }
