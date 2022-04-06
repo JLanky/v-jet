@@ -67,5 +67,5 @@ email: admin@i.ua
 
 pass: 12345678
 
-**Link to Postman documentation**
+**Link to Postman documentation:**
 >https://documenter.getpostman.com/view/8223351/UVyvuDtC
