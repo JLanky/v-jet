@@ -25,8 +25,11 @@ class CompanyController extends Controller
      */
     public function getUserCompanies(Request $request)
     {
-        return response()->json($this->service
-            ->getUserCompanies(), Response::HTTP_OK);
+        return $this->getResponseSignature(
+            self::RESPONSE_SUCCESS,
+            $this->service
+                ->getUserCompanies()
+        );
     }
 
 
@@ -46,12 +49,9 @@ class CompanyController extends Controller
         try {
         $this->service->createUserCompany($request->all());
 
-        return response()->json([
-            'status' => true,
-            'message' => 'CREATED',
-            ], Response::HTTP_CREATED);
+        return $this->getResponseSignature(self::RESPONSE_CREATED);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Creating user company Failed!'], Response::HTTP_CONFLICT);
+            return $this->getResponseSignature(self::RESPONSE_CREATE_COMPANY_FAILED);
         }
     }
 }

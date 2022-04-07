@@ -40,12 +40,9 @@ class RegisterController extends Controller
         try {
         $this->service->addNewRecord($request->all());
 
-        return response()->json([
-            'status' => true,
-            'message' => 'CREATED',
-            ], Response::HTTP_CREATED);
+        return $this->getResponseSignature(self::RESPONSE_CREATED);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'User Registration Failed!'], Response::HTTP_CONFLICT);
+            return $this->getResponseSignature(self::RESPONSE_REGISTRATION_FAILED);
         }
     }
 }

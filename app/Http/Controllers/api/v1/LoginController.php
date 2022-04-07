@@ -25,9 +25,9 @@ class LoginController extends Controller
         $credentials = $request->only(['email', 'password']);
 
         if (! $token = Auth::attempt($credentials, true)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+            return $this->getResponseSignature(self::RESPONSE_UNAUTHORIZED);
         }
 
-        return $this->respondWithToken($token);
+        return $this->getResponseSignature(self::RESPONSE_USER_TOKEN, $token);
     }
 }
